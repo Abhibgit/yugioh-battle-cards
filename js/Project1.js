@@ -2,13 +2,19 @@
 var yugiohApp = {};
 
 //make  arrays upto 3
-const attack = [100, 50, 60, 0];
-const defence = [10, 60, 40, 100];
+const attack = [180, 500, 160, 0, 200, 150, 225, 450, 25, 185];
+const defence = [100, 60, 40, 100, 300, 500];
 let cardImage = [
   "../images/Blueeyes.jpg",
   "../images/Dark_Magician.jpg",
   "../images/BusterBlader.jpg",
   "../images/EXODIA.jpg",
+  "../images/SummonedSkull.jpg",
+  "../images/TylertheGreatWarrior.jpg",
+  "../images/TheForbiddengod.jpg",
+  "../images/DivineMagician.jpg",
+  "../images/Amun.jpg",
+  "../images/Thunderdragonking.jpg",
 ];
 
 //make an empty array
@@ -59,8 +65,8 @@ function begin() {
 
   //Players Hand Algo
 
-  playerHandcard = cardImage.slice(0, 2);
-  compHandcard = cardImage.slice(1, 3);
+  playerHandcard = cardImage.slice(0, 5);
+  compHandcard = cardImage.slice(5, 10);
 
   yugiohApp.playerCard.src = playerHandcard[0];
   yugiohApp.oppCard.src = compHandcard[0];
@@ -73,8 +79,8 @@ function begin() {
     attack[j] = temp;
   }
 
-  playerAttack = attack.slice(0, 2);
-  compAttack = attack.slice(1, 3);
+  playerAttack = attack.slice(0, 5);
+  compAttack = attack.slice(5, 10);
 
   damage = playerAttack[0];
   oAttack = compAttack[0];
