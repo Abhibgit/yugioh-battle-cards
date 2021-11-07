@@ -1,50 +1,36 @@
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-    <title> Yugioh</title>
-</head>
-<body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Yugioh</title>
+    <link href="./css/Project1.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
     <h1>Yugioh</h1>
-    <div class="textupdates" id="textUpdates">
-        Lets Battle!
+    <script defer src="./js/Project1.js"></script>
 
+        <div class="container">
+          <div class="Header">
+            <h2>"Are you ready?"</h2>
+          </div>
+          <div class="Opponent">
+            <div class="compHealth" id="compHealth">Kaiba Health</div>
+            <div class="compAttack" id="compAttack">Kaiba Attack</div>
+            <div class="buttonbox1" id="compControls">
+              <button alt="cAttack" id="cAttack">Attack</button>
+              <button alt="cDefend" id="cDefend">Defend</button>
+          </div>
+          </div>
 
-    </div> 
-
-    <div class="buttonbox" id="begin">
-        <button alt="start" id="start">start</button>
-    </div>
-    <div class="buttonbox hidden" id="buttonBox">
-        <button alt="attack" id="attack">Attack</button>
-        <button alt="defend" id="defend">Defend</button>
-    </div>
-    <table>
-        <tr>
-            <th id="phand">             
-                Your Hand
-            </th>
-            <th id="dhand">
-                Computer's Hand
-            </th>
-        </tr>
-        <tr>
-            <td id="pcards">No cards dealt yet</td>
-            <td id="dcards">No cards dealt yet</td>
-
-        </tr> 
-    </table>
-    <div id="tracker" class="buttonbox">
-        <p>Wins: 0 Draws: 0 Losses: 0</p>
-    </div>
-    <div class="buttonbox">
-        <p><span class="bold" >simple strategy suggestion: </span></p>       
-        <span id="choice" class="bold redcard"></span>
-        <!--<br />
-        <br />
-        <img src="img/stratchart.png" />-->
-    </div>
-
-
-
-<script></script>
-</body>
-
+          <div class="Player">
+            <div class="playerHealth" id="playerHealth">Player Health</div>
+            <div class="playerAttack" id="playerAttack">Player Attack</div>
+            <div class="buttonbox1" id="playerControls">
+              <button alt="pAttack" id="pAttack">Attack</button>
+              <button alt="pDefend" id="pDefend">Defend</button>
+          </div>
+        </div>
+    <button alt="start" id="start">Start</button>
+  </body>
 </html>
