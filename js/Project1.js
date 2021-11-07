@@ -124,7 +124,7 @@ function hit() {
         winner = "Kaiba";
       }
       yugiohApp.annoucement.innerHTML =
-        "That was the last round! We have a winner!" + winner + "Wins!";
+        "That was the last round! We have a winner! " + winner + " Wins!";
     }
   }
 }
