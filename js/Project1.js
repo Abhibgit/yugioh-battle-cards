@@ -31,6 +31,7 @@ let winner = "";
 //declare buttons
 
 yugiohApp.startButton = document.getElementById("start");
+yugiohApp.resetButton = document.getElementById("reset");
 yugiohApp.pAttackButton = document.getElementById("pAttack");
 // yugiohApp.pDefendButton = document.getElementById("pDefend");
 // yugiohApp.cDefendButton = document.getElementById("cDefend");
@@ -129,9 +130,27 @@ function hit() {
   }
 }
 
-function block() {}
+function reset() {
+  yugiohApp.playerCard.src = "../images/Background2.jpg";
+  yugiohApp.oppCard.src = "../images/Background1.jpg";
+  damage = 0;
+  oAttack = 0;
+  pHealth = 1000;
+  cHealth = 1000;
+  playerHandcard = [];
+  compHandcard = [];
+  playerAttack = [];
+  compAttack = [];
+  winner = "";
+  yugiohApp.playerHealth.innerHTML = "Player Health:";
+  yugiohApp.compHealth.innerHTML = "Kaiba Health:";
+  yugiohApp.playerAttack.innerHTML = "Player Attack:";
+  yugiohApp.compAttack.innerHTML = "Opponent Attack:";
+  yugiohApp.annoucement.innerHTML = "";
+}
 
 //event listener for buttons
 yugiohApp.startButton.addEventListener("click", begin);
 yugiohApp.pAttackButton.addEventListener("click", hit);
+yugiohApp.resetButton.addEventListener("click", reset);
 //yugiohApp.pDefendButton.addEventListener("click", block);
