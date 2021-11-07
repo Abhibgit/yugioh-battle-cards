@@ -46,6 +46,8 @@ yugiohApp.playerAttack = document.getElementById("playerAttack");
 yugiohApp.annoucement = document.getElementById("gameAnnouncement");
 //make 2 empty boxes to start with to reflext the attack and defense
 
+yugiohApp.pAttackButton.disabled = true;
+
 // functions
 
 function begin() {
@@ -88,6 +90,9 @@ function begin() {
 
   yugiohApp.playerAttack.innerHTML = "Player Attack:" + damage;
   yugiohApp.compAttack.innerHTML = "Opponent Attack:" + oAttack;
+
+  yugiohApp.startButton.disabled = true;
+  yugiohApp.pAttackButton.disabled = false;
 }
 
 function hit() {
@@ -147,6 +152,8 @@ function reset() {
   yugiohApp.playerAttack.innerHTML = "Player Attack:";
   yugiohApp.compAttack.innerHTML = "Opponent Attack:";
   yugiohApp.annoucement.innerHTML = "";
+  yugiohApp.startButton.disabled = false;
+  yugiohApp.pAttackButton.disabled = true;
 }
 
 //event listener for buttons
