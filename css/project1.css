@@ -6,15 +6,19 @@ h2 {
 }
 
 body {
-  height: 100vh;
   margin: 0;
   font-family: Helvetica;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../images/game_background.jpeg");
 }
 
 .container {
   display: grid;
   grid-template-columns: 1.5fr 0.1fr 1.4fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   justify-items: start;
@@ -26,10 +30,12 @@ body {
 
 .Header {
   grid-area: Header;
+  align-self: center;
 }
 
 .Opponent {
   grid-area: Opponent;
+  align-self: center;
 }
 
 .cDefend {
@@ -38,11 +44,54 @@ body {
 
 .Player {
   grid-area: Player;
+  align-self: center;
 }
 
 .playerHealth {
+  align-self: center;
 }
 
 .cDefend {
   justify-items: end;
+}
+
+img {
+  border-radius: 5px 5px 0 0;
+  padding: 2px 16px;
+}
+
+button {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
 }
