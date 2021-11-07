@@ -12,12 +12,15 @@ let cardImage = [
 ];
 
 //make an empty array
-let monsters = [];
-
+let damage = 0;
+let oAttack = 0;
 let pHealth = 1000;
 let cHealth = 1000;
-//let pAttack = pa;
-//let cAttack = ca;
+let playerHandcard = [];
+let compHandcard = [];
+let playerAttack = [];
+let compAttack = [];
+let winner = "";
 
 //declare buttons
 
@@ -33,15 +36,17 @@ yugiohApp.oppCard = document.getElementById("oppCard");
 yugiohApp.openingImage = document.getElementById("openingImage");
 yugiohApp.compAttack = document.getElementById("compAttack");
 yugiohApp.playerAttack = document.getElementById("playerAttack");
+yugiohApp.annoucement = document.getElementById("gameAnnouncement");
 //make 2 empty boxes to start with to reflext the attack and defense
 
 // functions
 
 function begin() {
+  pHealth = 1000;
+  cHealth = 1000;
+
   yugiohApp.playerHealth.innerHTML = "Player Health:" + pHealth;
   yugiohApp.compHealth.innerHTML = "Kaiba Health:" + cHealth;
-  yugiohApp.playerCard.src = "../images/yugioh.jpg";
-  yugiohApp.oppCard.src = "../images/opponent.jpg";
 
   //image shuffle algo
 
@@ -51,20 +56,16 @@ function begin() {
     cardImage[n] = cardImage[j];
     cardImage[j] = temp;
   }
-  console.log({ cardImage });
 
   //Players Hand Algo
 
-  const playerHandcard = cardImage.slice(0, 2);
-
-  const compHandcard = cardImage.slice(1, 3);
+  playerHandcard = cardImage.slice(0, 2);
+  compHandcard = cardImage.slice(1, 3);
 
   yugiohApp.playerCard.src = playerHandcard[0];
-
   yugiohApp.oppCard.src = compHandcard[0];
 
   // Players attack algo
-
   for (let n = attack.length - 1; n > 0; n--) {
     let j = Math.floor(Math.random() * n);
     let temp = attack[n];
@@ -72,34 +73,59 @@ function begin() {
     attack[j] = temp;
   }
 
-  const playerAttack = attack.slice(0, 2);
+  playerAttack = attack.slice(0, 2);
+  compAttack = attack.slice(1, 3);
 
-  const compAttack = attack.slice(1, 3);
-
-  let damage = playerAttack[0];
-  let oAttack = compAttack[0];
+  damage = playerAttack[0];
+  oAttack = compAttack[0];
 
   yugiohApp.playerAttack.innerHTML = "Player Attack:" + damage;
   yugiohApp.compAttack.innerHTML = "Opponent Attack:" + oAttack;
 }
 
 function hit() {
-  if (monsters.indexOf(2)) {
+  if (playerHandcard.length === 0 || cHealth <= 0 || pHealth <= 0) {
+    if (cHealth > pHealth) {
+      yugiohApp.annoucement.innerHTML = "You Lost :( ";
+    } else {
+      yugiohApp.annoucement.innerHTML = "We have a winner! Yugi Wins!!!";
+    }
+  } else {
+    if (damage > oAttack) {
+      cHealth = cHealth - (damage - oAttack);
+      yugiohApp.compHealth.innerHTML = "Kaiba Health:" + cHealth;
+    } else {
+      pHealth = pHealth - (oAttack - damage);
+      yugiohApp.playerHealth.innerHTML = "Player Health:" + pHealth;
+    }
+    playerHandcard.shift();
+    compHandcard.shift();
+    playerAttack.shift();
+    compAttack.shift();
+
+    if (playerHandcard.length != 0) {
+      yugiohApp.playerCard.src = playerHandcard[0];
+      yugiohApp.oppCard.src = compHandcard[0];
+
+      damage = playerAttack[0];
+      oAttack = compAttack[0];
+      yugiohApp.playerAttack.innerHTML = "Player Attack:" + damage;
+      yugiohApp.compAttack.innerHTML = "Opponent Attack:" + oAttack;
+    } else {
+      if (pHealth > cHealth) {
+        winner = "Yugi";
+      } else {
+        winner = "Kaiba";
+      }
+      yugiohApp.annoucement.innerHTML =
+        "That was the last round! We have a winner!" + winner + "Wins!";
+    }
   }
 }
 
 function block() {}
 
-// random function shuffle
-
 //event listener for buttons
 yugiohApp.startButton.addEventListener("click", begin);
 yugiohApp.pAttackButton.addEventListener("click", hit);
 //yugiohApp.pDefendButton.addEventListener("click", block);
-
-// shuffle the cards
-// for (let n = deck.length - 1; n > 0; n--) {
-//   let j = Math.floor(Math.random() * n);
-//   let temp = deck[n];
-//   deck[n] = deck[j];
-//   deck[j] = temp;
