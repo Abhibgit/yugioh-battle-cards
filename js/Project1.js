@@ -1,7 +1,5 @@
-//make variables
 var yugiohApp = {};
 
-//make  arrays upto 3
 const attack = [180, 500, 160, 0, 200, 150, 225, 450, 25, 185];
 const defence = [100, 60, 40, 100, 300, 500];
 let cardImage = [
@@ -17,7 +15,6 @@ let cardImage = [
   "./images/Thunderdragonking.jpg",
 ];
 
-//make an empty array
 let damage = 0;
 let oAttack = 0;
 let pHealth = 1000;
@@ -28,13 +25,9 @@ let playerAttack = [];
 let compAttack = [];
 let winner = "";
 
-//declare buttons
-
 yugiohApp.startButton = document.getElementById("start");
 yugiohApp.resetButton = document.getElementById("reset");
 yugiohApp.pAttackButton = document.getElementById("pAttack");
-// yugiohApp.pDefendButton = document.getElementById("pDefend");
-// yugiohApp.cDefendButton = document.getElementById("cDefend");
 yugiohApp.cAttackButton = document.getElementById("cAttack");
 yugiohApp.playerHealth = document.getElementById("playerHealth");
 yugiohApp.compHealth = document.getElementById("compHealth");
@@ -44,11 +37,8 @@ yugiohApp.openingImage = document.getElementById("openingImage");
 yugiohApp.compAttack = document.getElementById("compAttack");
 yugiohApp.playerAttack = document.getElementById("playerAttack");
 yugiohApp.annoucement = document.getElementById("gameAnnouncement");
-//make 2 empty boxes to start with to reflext the attack and defense
 
 yugiohApp.pAttackButton.disabled = true;
-
-// functions
 
 function begin() {
   pHealth = 1000;
@@ -57,8 +47,6 @@ function begin() {
   yugiohApp.playerHealth.innerHTML = "Player Health:" + pHealth;
   yugiohApp.compHealth.innerHTML = "Kaiba Health:" + cHealth;
 
-  //image shuffle algo
-
   for (let n = cardImage.length - 1; n > 0; n--) {
     let j = Math.floor(Math.random() * n);
     let temp = cardImage[n];
@@ -66,15 +54,12 @@ function begin() {
     cardImage[j] = temp;
   }
 
-  //Players Hand Algo
-
   playerHandcard = cardImage.slice(0, 5);
   compHandcard = cardImage.slice(5, 10);
 
   yugiohApp.playerCard.src = playerHandcard[0];
   yugiohApp.oppCard.src = compHandcard[0];
 
-  // Players attack algo
   for (let n = attack.length - 1; n > 0; n--) {
     let j = Math.floor(Math.random() * n);
     let temp = attack[n];
@@ -156,8 +141,6 @@ function reset() {
   yugiohApp.pAttackButton.disabled = true;
 }
 
-//event listener for buttons
 yugiohApp.startButton.addEventListener("click", begin);
 yugiohApp.pAttackButton.addEventListener("click", hit);
 yugiohApp.resetButton.addEventListener("click", reset);
-//yugiohApp.pDefendButton.addEventListener("click", block);
