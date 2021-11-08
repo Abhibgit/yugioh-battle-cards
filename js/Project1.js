@@ -5,16 +5,16 @@ var yugiohApp = {};
 const attack = [180, 500, 160, 0, 200, 150, 225, 450, 25, 185];
 const defence = [100, 60, 40, 100, 300, 500];
 let cardImage = [
-  "../images/Blueeyes.jpg",
-  "../images/Dark_Magician.jpg",
-  "../images/BusterBlader.jpg",
-  "../images/EXODIA.jpg",
-  "../images/SummonedSkull.jpg",
-  "../images/TylertheGreatWarrior.jpg",
-  "../images/TheForbiddengod.jpg",
-  "../images/DivineMagician.jpg",
-  "../images/Amun.jpg",
-  "../images/Thunderdragonking.jpg",
+  "./images/Blueeyes.jpg",
+  "./images/Dark_Magician.jpg",
+  "./images/BusterBlader.jpg",
+  "./images/EXODIA.jpg",
+  "./images/SummonedSkull.jpg",
+  "./images/TylertheGreatWarrior.jpg",
+  "./images/TheForbiddengod.jpg",
+  "./images/DivineMagician.jpg",
+  "./images/Amun.jpg",
+  "./images/Thunderdragonking.jpg",
 ];
 
 //make an empty array
@@ -136,8 +136,8 @@ function hit() {
 }
 
 function reset() {
-  yugiohApp.playerCard.src = "../images/Background2.jpg";
-  yugiohApp.oppCard.src = "../images/Background1.jpg";
+  yugiohApp.playerCard.src = "./images/Background2.jpg";
+  yugiohApp.oppCard.src = "./images/Background1.jpg";
   damage = 0;
   oAttack = 0;
   pHealth = 1000;
