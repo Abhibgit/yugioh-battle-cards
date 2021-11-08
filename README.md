@@ -13,7 +13,8 @@ Gameplay :
 
 <img width="1402" alt="Screen Shot 2021-11-08 at 12 15 44 AM" src="https://user-images.githubusercontent.com/92744956/140752496-c197a88c-de87-4000-bb6e-f44b5e4584f1.png">
 
-![YGO-ACC-EG-SLEEVE](https://user-images.githubusercontent.com/92744956/140752520-230474dd-47a5-4448-9f7e-3f7f970fefa2.jpg)
+![91caZ1wEDrL _AC_SY741_](https://user-images.githubusercontent.com/92744956/140753442-cd291e09-841c-4c9c-939f-e1bc911b9373.jpg)
+
 
 
 Next Steps:
