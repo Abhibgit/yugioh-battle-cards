@@ -4,7 +4,7 @@ YU-GI-OH is an online arcade vs game that will you rivited and breathless.
 
 Clash with different Characters from the Yu-gi-oh universe and make yourself the ultimate duelist!
 
-Getting Started:Getting Started: https://abhibgit.github.io/yugioh-battle-cards/
+Getting Started: https://abhibgit.github.io/yugioh-battle-cards/
 Technologies Used: JavaScript, HTML, CSS...
 
 Gameplay :
