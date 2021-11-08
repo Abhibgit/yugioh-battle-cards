@@ -7,7 +7,17 @@ Clash with different Characters from the Yu-gi-oh universe and make yourself the
 Getting Started:Getting Started: https://abhibgit.github.io/yugioh-battle-cards/
 Technologies Used: JavaScript, HTML, CSS...
 
+Gameplay :
+
+<img width="1160" alt="Screen Shot 2021-11-08 at 8 39 39 AM" src="https://user-images.githubusercontent.com/92744956/140752466-f3444cb6-e347-4856-92b8-b16bac7bd6a9.png">
+
+<img width="1402" alt="Screen Shot 2021-11-08 at 12 15 44 AM" src="https://user-images.githubusercontent.com/92744956/140752496-c197a88c-de87-4000-bb6e-f44b5e4584f1.png">
+
+![YGO-ACC-EG-SLEEVE](https://user-images.githubusercontent.com/92744956/140752520-230474dd-47a5-4448-9f7e-3f7f970fefa2.jpg)
+
+
 Next Steps:
+
 
 ☐ Implementation of vs Player or AI button
 
